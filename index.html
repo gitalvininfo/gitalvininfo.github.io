@@ -16,13 +16,13 @@
 <body>
 
   <!--Switcher-->
-  <div class="style-switcher">
+  <!-- <div class="style-switcher">
     <span class="style-switcher__control"></span>
     <div class="style-switcher__list">
       <a class="style-switcher__link style-switcher__link--color"></a>
       <a class="style-switcher__link style-switcher__link--mono"></a>
     </div>
-  </div>
+  </div> -->
   <!--Switcher-->
 
   <!--Main menu-->
@@ -77,7 +77,7 @@
     <div class="container">
       <div class="row personal-profile">
         <div class="col-md-4 personal-profile__avatar">
-          <img class="" src="assets/img/alvin.jpg" alt="avatar">
+          <img class="" src="assets/img/me.jpg" alt="avatar">
         </div>
         <div class="col-md-8">
           <p class="personal-profile__name">Alvin Yanson</p>
@@ -97,7 +97,7 @@
           <p class="personal-profile__social">
             <a href="https://github.com/gitalvininfo" target="_blank"><i class="fa fa-github"></i></a>
             <a href="https://www.linkedin.com/in/alvyanson/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-            <a href="https://www.facebook.com/alvin.yanson.97" target="_blank"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.facebook.com/alvyanson" target="_blank"><i class="fa fa-facebook-square"></i></a>
           </p>
         </div>
       </div>
@@ -118,7 +118,7 @@
           designing, I use Adobe XD and Figma to create intuitive, user-friendly interfaces. I am a quick learner, hard
           worker, and team player who is proficient in an array of scripting languages and multimedia Web tools.
         </p>
-        <a href="" class="section_btn site-btn"><img src="assets/img/img_btn_icon.png" alt="">Download CV</a>
+        <a href="https://drive.google.com/file/d/1-o_h0UlQwbNTCP-3i1vbAdaYL64Px14n/view" target="_blank" class="section_btn site-btn"><img src="assets/img/img_btn_icon.png" alt="">Download CV</a>
       </div>
     </div>
   </section>
@@ -611,7 +611,7 @@
         <div class="col-md-7 col-lg-5">
           <div class="contacts__form">
             <p class="contacts__form-title">Or just write me a letter here_</p>
-            <form class="js-form">
+            <form class="js-form" id="alvin-contactform">
               <div class="form-group">
                 <input class="form-field js-field-name" type="text" placeholder="Your name" required>
                 <span class="form-validation"></span>
@@ -679,6 +679,14 @@
     </div>
   </div> -->
   <!-- Portfolio Modal -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+		(function () {
+			emailjs.init("z1g0FsO3RK4HY37iL");
+		})();
+	</script>
 
   <script src="assets/js/jquery-2.2.4.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
