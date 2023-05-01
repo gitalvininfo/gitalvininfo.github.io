@@ -10303,10 +10303,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .personal-profile .personal-profile__avatar img {
   border-radius: 5px;
   box-shadow: 0 0 27px rgba(96, 96, 96, 0.34);
-  width: 90%;
-  height: 380px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  width: 100%;
+  /* width: 90%; */
+  /* height: 380px; */
+  height: 230px;
+  /* -o-object-fit: cover;
+  object-fit: cover; */
+  -o-object-fit: contain;
+  object-fit: contain;
   margin-top: 10px;
   position: relative;
   top: 40px;
