@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alvin Yanson | Frontend Developer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script>
+    // Add JS class to HTML immediately to enable JS-only styles
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("%VITE_EMAILJS_PUBLIC_KEY%");
+    })();
+  </script>
+  <style>
+    /* Anti-FOUC: Hide body until CSS/JS is ready */
+    .js body {
+      opacity: 0;
+    }
+  </style>
+  <script>
+    // Fallback to show body if JS fails or loads slowly
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 500);
+    });
+  </script>
+</head>
+
+<body
+  class="bg-bg text-text-main font-sans selection:bg-accent-light selection:text-accent transition-opacity duration-500">
+  <div id="app" class="max-w-[1200px] mx-auto min-h-screen flex flex-col md:flex-row p-6 md:p-10 gap-12">
+
+    <!-- Sidebar -->
+    <aside
+      class="w-full md:w-[280px] flex-shrink-0 flex flex-col justify-between border-b md:border-b-0 md:border-r border-border pb-10 md:pb-0 md:pr-10 md:sticky md:top-10 md:h-[calc(100vh-80px)] self-start overflow-y-auto scrollbar-hide">
+      <div class="space-y-12">
+        <!-- Profile Header -->
+        <div class="profile-header flex flex-col items-center text-center md:items-start md:text-left">
+          <img src="/me.jpg" alt="Alvin Yanson" referrerPolicy="no-referrer"
+            class="w-24 h-24 rounded-full object-cover mb-6 border-2 border-accent/10">
+          <h1 class="text-[32px] font-extrabold tracking-tight text-accent leading-tight mb-1">Alvin Yanson</h1>
+          <p class="text-[14px] font-medium text-text-muted uppercase tracking-[0.1em]">Frontend Developer</p>
+        </div>
+
+        <!-- Contact Block -->
+        <div class="space-y-3 text-[13px] flex flex-col items-start">
+          <div class="flex text-text-muted w-full"><strong class="w-20 text-text-main font-semibold">Age</strong> 28
+          </div>
+          <div class="flex text-text-muted w-full"><strong class="w-20 text-text-main font-semibold">Location</strong>
+            Philippines</div>
+          <div class="flex text-text-muted w-full"><strong class="w-20 text-text-main font-semibold">Email</strong>
+            yanson.alvin.info@gmail.com</div>
+          <div class="flex text-text-muted w-full"><strong class="w-20 text-text-main font-semibold">Phone</strong>
+            09456980301</div>
+        </div>
+
+        <!-- Education (Sidebar) -->
+        <div class="flex flex-col items-start">
+          <h2>Education</h2>
+          <div class="education-item text-left">
+            <div class="item-title">BS Information Systems</div>
+            <div class="item-meta">University of Negros Occidental-Recoletos • 2014 — 2019</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex flex-wrap gap-4 mt-12 md:mt-auto justify-start">
+        <a href="https://github.com/gitalvininfo" target="_blank"
+          class="text-[12px] font-semibold text-text-muted border border-border px-2 py-1 rounded hover:bg-accent-light hover:text-accent transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/alvyanson/" target="_blank"
+          class="text-[12px] font-semibold text-text-muted border border-border px-2 py-1 rounded hover:bg-accent-light hover:text-accent transition-colors">LinkedIn</a>
+        <a href="https://www.facebook.com/alvyanson" target="_blank"
+          class="text-[12px] font-semibold text-text-muted border border-border px-2 py-1 rounded hover:bg-accent-light hover:text-accent transition-colors">Facebook</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 space-y-16">
+      <!-- About Section -->
+      <section id="about" class="reveal">
+        <p class="text-[16px] text-text-main max-w-[600px] leading-relaxed">
+          I am a dedicated Frontend Developer driven by the challenge of building impactful digital experiences.
+          With a focus on precision and user-centric design, I specialize in crafting intuitive interfaces
+          that bridge the gap between complex functionality and seamless interaction. I am committed to
+          continuous learning, ensuring every solution I deliver is both modern and highly performant.
+        </p>
+      </section>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Left Column -->
+        <div class="space-y-12">
+          <!-- Experience -->
+          <section id="experience" class="reveal">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="item-title">Arcanys <span
+                    class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded ml-1.5 align-middle uppercase">Current</span>
+                </div>
+                <div class="item-meta">Web Developer • Apr 2023 — Present</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="item-title">Qita Inc</div>
+                <div class="item-meta">Frontend Developer • Aug 2019 — Apr 2023</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="item-title">MIS - University of Negros Occidental-Recoletos</div>
+                <div class="item-meta">Intern • Apr 2018 — Aug 2018</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Awards -->
+          <section id="awards" class="reveal">
+            <h2>Awards</h2>
+            <div class="awards-list">
+              <div class="award-item">1st Runner Up – University Wide Thesis Expo</div>
+              <div class="award-item">Best Project Paper – UNOR College of IT</div>
+              <div class="award-item">Programming Proficiency Awardee</div>
+              <div class="award-item">3rd Place – Arendo Hackathon Team</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-12">
+          <!-- Tech Stack -->
+          <section id="skills" class="reveal">
+            <h2>Tech Stack</h2>
+            <div class="space-y-6">
+              <div class="skill-group">
+                <span class="text-[11px] font-bold text-text-muted uppercase tracking-wider block mb-2">Languages &
+                  Logic</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span
+                    class="tag">.NET</span><span class="tag">Java</span><span class="tag">SQL</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <span
+                  class="text-[11px] font-bold text-text-muted uppercase tracking-wider block mb-2">Frameworks</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tag">Angular</span><span class="tag">React</span><span class="tag">ExpressJS</span><span
+                    class="tag">NestJS</span><span class="tag">NodeJS</span><span class="tag">Blazor</span><span
+                    class="tag">NX Monorepo</span><span class="tag">React Native</span><span
+                    class="tag">Nativescript</span><span class="tag">Ionic</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <span class="text-[11px] font-bold text-text-muted uppercase tracking-wider block mb-2">Frontend &
+                  Tools</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SCSS</span><span
+                    class="tag">Tailwind</span><span class="tag">Vite</span><span class="tag">Figma</span><span
+                    class="tag">Docker</span><span class="tag">Jira</span><span class="tag">Azure</span> <span
+                    class="tag">Gitlab</span> <span class="tag">CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Licenses & Certs -->
+          <section id="certifications" class="reveal">
+            <h2>Licenses & Certs</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+              <div class="education-item">
+                <div class="item-title">Zod Workshop</div>
+                <div class="item-meta">Total TypeScript</div>
+                <a href="https://res.cloudinary.com/total-typescript/image/upload/v1749270141/certificate/bf33d69e-f743-4ecf-a407-306976df080b/zod.png"
+                  target="_blank" class="cta-btn">Show Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">Foundational C#</div>
+                <div class="item-meta">Microsoft & freeCodeCamp</div>
+                <a href="https://www.freecodecamp.org/certification/fcc227efd9f-1162-4af5-8ef2-fa73d0b36d83/foundational-c-sharp-with-microsoft"
+                  target="_blank" class="cta-btn">Show Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">Angular (Basic) Certificate</div>
+                <div class="item-meta">HackerRank</div>
+                <a href="https://www.hackerrank.com/certificates/47e074bc6cdd" target="_blank" class="cta-btn">Show
+                  Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">JavaScript (Basic) Certificate</div>
+                <div class="item-meta">HackerRank</div>
+                <a href="https://www.hackerrank.com/certificates/05178619f408" target="_blank" class="cta-btn">Show
+                  Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">C# (Basic) Certificate</div>
+                <div class="item-meta">HackerRank</div>
+                <a href="https://www.hackerrank.com/certificates/89b2bb1c1969" target="_blank" class="cta-btn">Show
+                  Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">Node (Basic) Certificate</div>
+                <div class="item-meta">HackerRank</div>
+                <a href="https://www.hackerrank.com/certificates/3d006ffd9fb6" target="_blank" class="cta-btn">Show
+                  Credential</a>
+              </div>
+              <div class="education-item">
+                <div class="item-title">SAP Certified SAP Business All-in-One Application Associate Logistics</div>
+                <div class="item-meta">SAP</div>
+              </div>
+              <div class="education-item">
+                <div class="item-title">Cisco Certified Network Associate Industrial (CCNA I - CCNA IV)</div>
+                <div class="item-meta">Cisco</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section id="projects">
+        <h2>Featured Projects - WIP</h2>
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="project-card reveal">
+            <div class="project-gallery-wrapper group">
+              <div class="project-gallery scrollbar-hide">
+                <img src="https://picsum.photos/seed/dash1/800/450" alt="Dashboard 1" referrerPolicy="no-referrer">
+                <img src="https://picsum.photos/seed/dash2/800/450" alt="Dashboard 2" referrerPolicy="no-referrer">
+                <img src="https://picsum.photos/seed/dash3/800/450" alt="Dashboard 3" referrerPolicy="no-referrer">
+              </div>
+              <button class="gallery-nav prev-btn opacity-0 group-hover:opacity-100" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button class="gallery-nav next-btn opacity-0 group-hover:opacity-100" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+              <div class="gallery-indicator">
+                <span data-index="0"></span>
+                <span data-index="1"></span>
+                <span data-index="2"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                E-Commerce Dashboard
+                <a href="#" target="_blank" class="text-text-muted hover:text-accent transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="project-desc">A comprehensive analytics dashboard for e-commerce platforms, featuring real-time
+                data visualization and inventory management.</p>
+              <div class="flex flex-col gap-6 mt-auto">
+                <div class="project-tech">
+                  <span class="tag">React</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Tailwind</span>
+                  <span class="tag">D3.js</span>
+                </div>
+                <a href="#" target="_blank" class="view-project-btn">
+                  View Project
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card reveal">
+            <div class="project-gallery-wrapper group">
+              <div class="project-gallery scrollbar-hide">
+                <img src="https://picsum.photos/seed/api1/800/450" alt="API 1" referrerPolicy="no-referrer">
+                <img src="https://picsum.photos/seed/api2/800/450" alt="API 2" referrerPolicy="no-referrer">
+              </div>
+              <button class="gallery-nav prev-btn opacity-0 group-hover:opacity-100" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button class="gallery-nav next-btn opacity-0 group-hover:opacity-100" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+              <div class="gallery-indicator">
+                <span data-index="0"></span>
+                <span data-index="1"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                Task Management API
+                <a href="#" target="_blank" class="text-text-muted hover:text-accent transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="project-desc">A robust RESTful API built for high-concurrency task management, including JWT
+                authentication and automated documentation.</p>
+              <div class="flex flex-col gap-6 mt-auto">
+                <div class="project-tech">
+                  <span class="tag">NestJS</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Docker</span>
+                </div>
+                <a href="#" target="_blank" class="view-project-btn">
+                  View Project
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card reveal">
+            <div class="project-gallery-wrapper group">
+              <div class="project-gallery scrollbar-hide">
+                <img src="https://picsum.photos/seed/port1/800/450" alt="Portfolio 1" referrerPolicy="no-referrer">
+                <img src="https://picsum.photos/seed/port2/800/450" alt="Portfolio 2" referrerPolicy="no-referrer">
+              </div>
+              <button class="gallery-nav prev-btn opacity-0 group-hover:opacity-100" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button class="gallery-nav next-btn opacity-0 group-hover:opacity-100" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+              <div class="gallery-indicator">
+                <span data-index="0"></span>
+                <span data-index="1"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                Portfolio Builder
+                <a href="#" target="_blank" class="text-text-muted hover:text-accent transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="project-desc">A drag-and-drop tool for developers to generate minimal portfolio websites using
+                predefined themes and components.</p>
+              <div class="flex flex-col gap-6 mt-auto">
+                <div class="project-tech">
+                  <span class="tag">Angular</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">SCSS</span>
+                </div>
+                <a href="#" target="_blank" class="view-project-btn">
+                  View Project
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card reveal">
+            <div class="project-gallery-wrapper group">
+              <div class="project-gallery scrollbar-hide">
+                <img src="https://picsum.photos/seed/chat1/800/450" alt="Chat 1" referrerPolicy="no-referrer">
+                <img src="https://picsum.photos/seed/chat2/800/450" alt="Chat 2" referrerPolicy="no-referrer">
+              </div>
+              <button class="gallery-nav prev-btn opacity-0 group-hover:opacity-100" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button class="gallery-nav next-btn opacity-0 group-hover:opacity-100" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+              <div class="gallery-indicator">
+                <span data-index="0"></span>
+                <span data-index="1"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                Real-time Chat App
+                <a href="#" target="_blank" class="text-text-muted hover:text-accent transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="project-desc">A secure messaging application supporting private rooms, file sharing, and
+                end-to-end encryption for data privacy.</p>
+              <div class="flex flex-col gap-6 mt-auto">
+                <div class="project-tech">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Socket.io</span>
+                  <span class="tag">MongoDB</span>
+                </div>
+                <a href="#" target="_blank" class="view-project-btn">
+                  View Project
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact"
+        class="reveal pt-10 border-t border-border flex flex-col sm:flex-row justify-end items-start sm:items-center gap-6">
+        <button id="open-contact-btn"
+          class="bg-accent text-white no-underline px-6 py-2.5 rounded-md text-[14px] font-semibold hover:bg-accent/90 transition-colors shadow-sm">Get
+          In Touch</button>
+      </section>
+
+      <!-- Hidden Contact Form (Modal or Expandable) -->
+      <div id="contact-form-container" class="hidden pt-10 border-t border-border">
+        <form id="contact-form" class="space-y-6 max-w-xl">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="user_name" class="text-[11px] font-bold uppercase text-text-muted tracking-wider">Name</label>
+              <input type="text" name="user_name" id="user_name" required
+                class="w-full px-4 py-2.5 bg-accent-light/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all text-sm">
+            </div>
+            <div class="space-y-2">
+              <label for="user_email"
+                class="text-[11px] font-bold uppercase text-text-muted tracking-wider">Email</label>
+              <input type="email" name="user_email" id="user_email" required
+                class="w-full px-4 py-2.5 bg-accent-light/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all text-sm">
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label for="message" class="text-[11px] font-bold uppercase text-text-muted tracking-wider">Message</label>
+            <textarea name="message" id="message" rows="4" required
+              class="w-full px-4 py-2.5 bg-accent-light/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all text-sm resize-none"></textarea>
+          </div>
+          <div class="flex items-center gap-4">
+            <button type="submit"
+              class="bg-accent text-white px-6 py-2.5 rounded-md text-[14px] font-semibold hover:bg-accent/90 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100">
+              Send Message
+            </button>
+            <p id="form-status" class="text-xs font-medium hidden"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
