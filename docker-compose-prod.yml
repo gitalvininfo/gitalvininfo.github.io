@@ -1,0 +1,11 @@
+name: portfolio
+
+services:
+  app:
+    image: registry.gitlab.com/yanson.alvin.info-group/portfolio:latest
+    container_name: portfolio
+    restart: always
+    expose:
+      - 80
+    environment:
+      - NODE_ENV=production

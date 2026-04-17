@@ -1,0 +1,53 @@
+variables:
+  CI: 'true'
+  # Enable Docker BuildKit for faster builds
+  DOCKER_BUILDKIT: 1
+
+stages:
+  - build
+  - deploy
+
+build-portfolio:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: ''
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u "$CI_REGISTRY_USER" --password-stdin
+  script:
+    # Pull the latest image to use as a cache source
+    - docker pull $CI_REGISTRY_IMAGE:latest || true
+    # Build with cache and pass GEMINI_API_KEY if defined in CI/CD Variables
+    - |
+      docker build \
+        --cache-from $CI_REGISTRY_IMAGE:latest \
+        -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA \
+        -t $CI_REGISTRY_IMAGE:latest \
+        .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+deploy-portfolio:
+  stage: deploy
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  before_script:
+    - apk add --no-cache openssh-client
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+    - ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+  script:
+    - |
+      ssh -i ~/.ssh/id_ed25519 root@"$SERVER_IP" "
+        cd /home/alvin/apps/portfolio && \
+        docker compose pull app && \
+        docker compose up -d app && \
+        docker system prune -f
+      "
